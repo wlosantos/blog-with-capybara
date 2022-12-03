@@ -11,4 +11,7 @@ html
     = javascript_importmap_tags
 
   body
+    - flash.each do |key, value|
+      div class="text-center text-white p-3 #{key == 'notice' ? 'bg-green-500' : 'bg-red-500'}"
+        = value['message']
     = yield
